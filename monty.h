@@ -23,6 +23,7 @@ void handle_opcode(char *line, unsigned int line_number);
 void handle_push(char *arg, unsigned int line_number);
 void parse_lines(char *line[]);
 void swap(stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *stack);
 
 /* End of function prototypes */
 

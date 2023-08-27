@@ -41,6 +41,7 @@ void handle_opcode(char *line, unsigned int line_number)
 			}
 		}
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -60,6 +61,7 @@ void handle_push(char *arg, unsigned int line_number)
 		if ((arg[0] != '0') && (argument == 0))
 		{
 			fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+			free_stack(*stack);
 			exit(EXIT_FAILURE);
 		}
 		else
@@ -71,6 +73,7 @@ void handle_push(char *arg, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 }

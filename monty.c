@@ -52,6 +52,7 @@ int main(int argc, char **argv)
 		}
 		line[i] = NULL;
 		parse_lines(line);
+		free_stack(*stack);
 		close(fd);
 	}
 	else

@@ -13,6 +13,7 @@ void push(stack_t **stack, int data)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed");
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
@@ -73,6 +74,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -126,6 +128,7 @@ void swap(stack_t **stack, unsigned int line_number)
 		if (len < 2)
 		{
 			fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+			free_stack(*stack);
 			exit(EXIT_FAILURE);
 		}
 		else
