@@ -103,3 +103,45 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	free(temp);
 }
+
+/**
+ * swap - swaps the first two element in the stack
+ * @stack: the stack
+ * @line_number: file lie number
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	int temp, len = 0;
+	stack_t *tem;
+
+	if (*stack)
+	{
+		tem = *stack;
+		while (tem)
+		{
+			len += 1;
+			tem = tem->next;
+		}
+
+		if (len < 2)
+		{
+			fprintf(stderr, "L%d: can't swap, stack too short", line_number);
+			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			stack_t *next = (*stack)->next;
+
+			temp = (*stack)->n;
+			(*stack)->n = next->n;
+			next->n = temp;
+
+			return;
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
