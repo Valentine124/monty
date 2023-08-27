@@ -26,13 +26,11 @@ int main(int argc, char **argv)
 	char str[1024], *token = NULL;
 
 	stack = &head;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-
 	if (stat(argv[1], &buff) == 0)
 	{
 		fd = open(argv[1], O_RDONLY);
@@ -44,7 +42,6 @@ int main(int argc, char **argv)
 			exit(EXIT_FAILURE);
 		}
 		str[rd] = '\0';
-
 		token = strtok(str, "\n");
 		i = 0;
 		while (token)
@@ -54,9 +51,13 @@ int main(int argc, char **argv)
 			i++;
 		}
 		line[i] = NULL;
-
 		parse_lines(line);
 		close(fd);
+	}
+	else
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
 	}
 	return (0);
 }
