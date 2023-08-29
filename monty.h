@@ -24,7 +24,8 @@ void handle_push(char *arg, unsigned int line_number);
 void parse_lines(char *line[]);
 void swap(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
-
+int stack_len(stack_t *stack);
+void add(stack_t **stack, unsigned int line_number);
 /* End of function prototypes */
 
 #endif
