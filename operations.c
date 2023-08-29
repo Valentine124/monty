@@ -44,7 +44,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 
 	temp = *stack;
