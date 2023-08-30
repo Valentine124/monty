@@ -19,6 +19,8 @@ void handle_opcode(char *line, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 

@@ -26,6 +26,8 @@ void swap(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 int stack_len(stack_t *stack);
 void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_numbert);
+void sub(stack_t **stack, unsigned int line_numbert);
 /* End of function prototypes */
 
 #endif
